@@ -2,7 +2,12 @@
 
 ## Gitコマンド
 -ローカルリポジトリの作成
-  - `git init
+  - git init
 
 -ファイルの状態を確認
+  - git status
+
+
+
+  
   
