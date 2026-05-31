@@ -1,0 +1,14 @@
+{
+  "name": "chiiki-keiei-lab",
+  "version": "1.0.0",
+  "private": true,
+  "description": "地域経営ラボ — 静的サイトビルドツール",
+  "scripts": {
+    "build": "node build.js",
+    "serve": "python3 -m http.server 8080"
+  },
+  "dependencies": {
+    "gray-matter": "^4.0.3",
+    "marked": "^15.0.0"
+  }
+}
