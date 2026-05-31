@@ -5,7 +5,7 @@ on:
     branches:
       - main
     paths:
-      - 'regional management/summaries/**'
+      - 'regional_management/summaries/**'
 
 permissions:
   contents: write
@@ -23,16 +23,16 @@ jobs:
         with:
           node-version: '20'
           cache: 'npm'
-          cache-dependency-path: 'regional management/package-lock.json'
+          cache-dependency-path: 'regional_management/package-lock.json'
 
       - name: Install dependencies
         run: |
-          cd "regional management"
+          cd "regional_management"
           npm ci
 
       - name: Run build script
         run: |
-          cd "regional management"
+          cd "regional_management"
           npm run build
 
       - name: Commit and push changes
@@ -41,7 +41,7 @@ jobs:
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           
           # 変更のあったHTMLファイルをステージング
-          git add "regional management/weekly/" "regional management/index.html"
+          git add "regional_management/weekly/" "regional_management/index.html"
           
           # 差分がある場合のみコミット＆プッシュを実行
           if git diff --cached --quiet; then
