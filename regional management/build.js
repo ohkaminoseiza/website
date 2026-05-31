@@ -136,14 +136,14 @@ function articlePageHtml(article, articles) {
   const older = idx < articles.length - 1 ? articles[idx + 1] : null;
 
   const prevNav = older
-    ? `<a href="/weekly/${older.filename}" class="article-nav__link">
+    ? `<a href="${older.filename}" class="article-nav__link">
         <span class="article-nav__label">← 前の記事</span>
         <span class="article-nav__title">${older.title}</span>
       </a>`
     : '<div></div>';
 
   const nextNav = newer
-    ? `<a href="/weekly/${newer.filename}" class="article-nav__link article-nav__link--next">
+    ? `<a href="${newer.filename}" class="article-nav__link article-nav__link--next">
         <span class="article-nav__label">次の記事 →</span>
         <span class="article-nav__title">${newer.title}</span>
       </a>`
@@ -163,22 +163,22 @@ function articlePageHtml(article, articles) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>${article.title} — 地域経営ラボ</title>
   <meta name="description" content="${article.excerpt}">
-  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="../style.css">
 </head>
 <body>
 
   <header class="site-header">
     <div class="container header-inner">
-      <a href="/" class="site-logo">
+      <a href="../index.html" class="site-logo">
         <span class="site-logo__icon">📘</span>
         <span class="site-logo__text">地域経営ラボ</span>
         <span class="site-logo__sub">Regional Management Lab</span>
       </a>
       <nav class="site-nav" aria-label="メインナビゲーション">
-        <a href="/">ホーム</a>
-        <a href="/basic/">地域経営の基本</a>
-        <a href="/weekly/" aria-current="page">週刊ノート</a>
-        <a href="/about.html">このサイトについて</a>
+        <a href="../index.html">ホーム</a>
+        <a href="../basic/index.html">地域経営の基本</a>
+        <a href="index.html" aria-current="page">週刊ノート</a>
+        <a href="../about.html">このサイトについて</a>
       </nav>
     </div>
   </header>
@@ -188,8 +188,8 @@ function articlePageHtml(article, articles) {
       <article>
         <div class="article-header">
           <nav class="article-header__breadcrumb" aria-label="パンくずリスト">
-            <a href="/">ホーム</a><span class="sep">/</span>
-            <a href="/weekly/">週刊・地域経営ノート</a><span class="sep">/</span>
+            <a href="../index.html">ホーム</a><span class="sep">/</span>
+            <a href="index.html">週刊・地域経営ノート</a><span class="sep">/</span>
             <span>${formatDateDot(article.date)}</span>
           </nav>
           <h1 class="article-header__title">${article.title}</h1>
@@ -216,10 +216,10 @@ function articlePageHtml(article, articles) {
   <footer class="site-footer">
     <div class="container footer-inner">
       <nav class="footer-nav" aria-label="フッターナビゲーション">
-        <a href="/">ホーム</a>
-        <a href="/basic/">地域経営の基本</a>
-        <a href="/weekly/">週刊ノート</a>
-        <a href="/about.html">このサイトについて</a>
+        <a href="../index.html">ホーム</a>
+        <a href="../basic/index.html">地域経営の基本</a>
+        <a href="index.html">週刊ノート</a>
+        <a href="../about.html">このサイトについて</a>
       </nav>
       <p class="footer-copy">&copy; 2026 地域経営ラボ</p>
     </div>
@@ -232,7 +232,7 @@ function articlePageHtml(article, articles) {
 function weeklyListItemHtml(article) {
   return `          <li class="weekly-list__item">
             <div class="weekly-list__info">
-              <h2 class="weekly-list__title"><a href="/weekly/${article.filename}">${article.title}</a></h2>
+              <h2 class="weekly-list__title"><a href="${article.filename}">${article.title}</a></h2>
               <p class="weekly-list__excerpt">${article.excerpt}</p>
             </div>
             <time class="weekly-list__date" datetime="${article.date}">${formatDateDot(article.date)}</time>
@@ -249,22 +249,22 @@ function weeklyIndexHtml(articles) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>週刊・地域経営ノート — 地域経営ラボ</title>
   <meta name="description" content="地域経営にまつわる最新トピックを毎週お届けする「週刊・地域経営ノート」のバックナンバー一覧です。">
-  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="../style.css">
 </head>
 <body>
 
   <header class="site-header">
     <div class="container header-inner">
-      <a href="/" class="site-logo">
+      <a href="../index.html" class="site-logo">
         <span class="site-logo__icon">📘</span>
         <span class="site-logo__text">地域経営ラボ</span>
         <span class="site-logo__sub">Regional Management Lab</span>
       </a>
       <nav class="site-nav" aria-label="メインナビゲーション">
-        <a href="/">ホーム</a>
-        <a href="/basic/">地域経営の基本</a>
-        <a href="/weekly/" aria-current="page">週刊ノート</a>
-        <a href="/about.html">このサイトについて</a>
+        <a href="../index.html">ホーム</a>
+        <a href="../basic/index.html">地域経営の基本</a>
+        <a href="index.html" aria-current="page">週刊ノート</a>
+        <a href="../about.html">このサイトについて</a>
       </nav>
     </div>
   </header>
@@ -294,10 +294,10 @@ ${listItems}
   <footer class="site-footer">
     <div class="container footer-inner">
       <nav class="footer-nav" aria-label="フッターナビゲーション">
-        <a href="/">ホーム</a>
-        <a href="/basic/">地域経営の基本</a>
-        <a href="/weekly/">週刊ノート</a>
-        <a href="/about.html">このサイトについて</a>
+        <a href="../index.html">ホーム</a>
+        <a href="../basic/index.html">地域経営の基本</a>
+        <a href="index.html">週刊ノート</a>
+        <a href="../about.html">このサイトについて</a>
       </nav>
       <p class="footer-copy">&copy; 2026 地域経営ラボ</p>
     </div>
@@ -323,7 +323,7 @@ function updateTopPageLatest(articles) {
   const latestListItems = latest.map(a =>
     `          <li class="weekly-list__item">
             <div class="weekly-list__info">
-              <h3 class="weekly-list__title"><a href="/weekly/${a.filename}">${a.title}</a></h3>
+              <h3 class="weekly-list__title"><a href="weekly/${a.filename}">${a.title}</a></h3>
               <p class="weekly-list__excerpt">${a.excerpt}</p>
             </div>
             <time class="weekly-list__date" datetime="${a.date}">${formatDateDot(a.date)}</time>
